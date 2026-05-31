@@ -1157,8 +1157,24 @@ a {
         border-top: none;
     }
 
+    .dashboard-frame {
+        aspect-ratio: auto;
+        height: auto;
+    }
+
     .db-sidebar {
         display: none !important;
+    }
+
+    .db-search {
+        width: auto;
+        flex: 1;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
+    .db-stats {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     }
 
     .appt-treatment {
