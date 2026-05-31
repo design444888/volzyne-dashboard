@@ -33,12 +33,13 @@
 }
 
 body {
-    background-color: var(--bg);
+    background: #090712;
     color: var(--text-primary);
     font-family: var(--font-body);
     line-height: 1.6;
     overflow-x: hidden;
     width: 100%;
+    min-height: 100vh;
 }
 
 html {
@@ -62,47 +63,60 @@ html {
 .delay-200 { transition-delay: 200ms; }
 .delay-300 { transition-delay: 300ms; }
 
-@keyframes pillar-breathe {
-    0%, 100% { transform: translateX(-50%) scaleY(1) scaleX(1); opacity: 0.7; }
-    50% { transform: translateX(-50%) scaleY(1.05) scaleX(1.1); opacity: 1; }
+/* Glow Background Effects (Aura BG) */
+.aura-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 10%, rgba(157, 78, 221, 0.25), transparent 40%),
+    linear-gradient(180deg, #12091f 0%, #090712 100%);
 }
 
-@keyframes ambient-breathe {
-    0%, 100% { transform: translateX(-50%) scale(1); opacity: 0.5; }
-    50% { transform: translateX(-50%) scale(1.1); opacity: 0.7; }
+.aura-bg span {
+  position: absolute;
+  width: 50vw;
+  height: 50vw;
+  max-width: 500px;
+  max-height: 500px;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.25;
+  mix-blend-mode: screen;
+  animation: auraMove 12s ease-in-out infinite alternate;
 }
 
-/* Glow Background Effects (Light Pillar) */
-.bg-glow-1 {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 90vw;
-    max-width: 1200px;
-    height: 1000px;
-    background: radial-gradient(ellipse at top, rgba(130, 111, 240, 0.25) 0%, rgba(93, 73, 163, 0.1) 40%, rgba(0,0,0,0) 70%);
-    z-index: -1;
-    pointer-events: none;
-    filter: blur(80px);
-    animation: pillar-breathe 8s ease-in-out infinite;
-    will-change: transform, opacity;
+.aura-bg span:nth-child(1) {
+  background: #8b5cf6;
+  top: 60%;
+  left: 10%;
 }
 
-.bg-glow-2 {
-    position: absolute;
-    bottom: -200px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 1000px;
-    height: 800px;
-    background: radial-gradient(ellipse at bottom, rgba(93, 73, 163, 0.15) 0%, rgba(0,0,0,0) 60%);
-    z-index: -1;
-    pointer-events: none;
-    border-radius: 50%;
-    filter: blur(90px);
-    animation: ambient-breathe 12s ease-in-out infinite;
-    will-change: transform, opacity;
+.aura-bg span:nth-child(2) {
+  background: #d946ef;
+  top: 60%;
+  right: 8%;
+  animation-delay: -4s;
+}
+
+.aura-bg span:nth-child(3) {
+  background: #4f46e5;
+  bottom: 60%;
+  left: 35%;
+  animation-delay: -8s;
+}
+
+@keyframes auraMove {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(80px, -50px, 0) scale(1.25);
+  }
+  100% {
+    transform: translate3d(-70px, 70px, 0) scale(0.95);
+  }
 }
 
 /* Typography & Links */
