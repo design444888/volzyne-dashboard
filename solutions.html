@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solutions | Volzyne</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+    <!-- Background glowing circles -->
+    <div class="aura-bg">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <!-- 1. Navbar -->
+    <header class="header-wrapper" id="main-header">
+        <div class="container navbar">
+            <!-- Left: Brand Logo -->
+            <a href="/" class="logo" id="nav-brand-logo">
+                <div class="logo-icon"></div>
+                <span>Volzyne</span>
+            </a>
+
+            <!-- Center Navigation Links -->
+            <nav>
+                <ul class="nav-menu" id="nav-menu">
+                    <!-- Features Dropdown -->
+                    <li class="nav-item">
+                        <a href="/fonctionnalites" class="nav-link nav-link-dropdown" id="nav-features-dropdown">
+                            Fonctionnalités
+                            <i data-lucide="chevron-down" style="width: 14px; height: 14px; margin-left: 4px;"></i>
+                        </a>
+                        <div class="dropdown-menu">
+                            <a href="/fonctionnalites#unified-inbox" class="dropdown-item">
+                                <div class="dropdown-icon">
+                                    <i data-lucide="inbox" style="width: 18px; height: 18px;"></i>
+                                </div>
+                                <div class="dropdown-info">
+                                    <span class="dropdown-title">Unified Inbox</span>
+                                    <span class="dropdown-desc">Centralisez WhatsApp, Instagram et SMS</span>
+                                </div>
+                            </a>
+                            <a href="/fonctionnalites#smart-calendar" class="dropdown-item">
+                                <div class="dropdown-icon">
+                                    <i data-lucide="calendar" style="width: 18px; height: 18px;"></i>
+                                </div>
+                                <div class="dropdown-info">
+                                    <span class="dropdown-title">Smart Calendar</span>
+                                    <span class="dropdown-desc">Rendez-vous fluides et rappels auto</span>
+                                </div>
+                            </a>
+                            <a href="/fonctionnalites#ai-agent" class="dropdown-item">
+                                <div class="dropdown-icon">
+                                    <i data-lucide="bot" style="width: 18px; height: 18px;"></i>
+                                </div>
+                                <div class="dropdown-info">
+                                    <span class="dropdown-title">AI Agent</span>
+                                    <span class="dropdown-desc">Secrétaire virtuelle disponible 24/7</span>
+                                </div>
+                            </a>
+                            <a href="/fonctionnalites#analytics" class="dropdown-item">
+                                <div class="dropdown-icon">
+                                    <i data-lucide="bar-chart-2" style="width: 18px; height: 18px;"></i>
+                                </div>
+                                <div class="dropdown-info">
+                                    <span class="dropdown-title">Analytics</span>
+                                    <span class="dropdown-desc">Statistiques de ventes et performances</span>
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+
+                    <!-- Solutions Dropdown -->
+                    <li class="nav-item">
+                        <a href="/solutions" class="nav-link nav-link-dropdown active" id="nav-solutions-dropdown">
+                            Solutions
+                            <i data-lucide="chevron-down" style="width: 14px; height: 14px; margin-left: 4px;"></i>
+                        </a>
+                        <div class="dropdown-menu">
+                            <a href="/solutions#cliniques-laser" class="dropdown-item">
+                                <div class="dropdown-icon">
+                                    <i data-lucide="activity" style="width: 18px; height: 18px;"></i>
+                                </div>
+                                <div class="dropdown-info">
+                                    <span class="dropdown-title">Cliniques & Centres Laser</span>
+                                    <span class="dropdown-desc">Suivi médical, consentement et cabines</span>
+                                </div>
+                            </a>
+                            <a href="/solutions#spas-hammams" class="dropdown-item">
+                                <div class="dropdown-icon">
+                                    <i data-lucide="droplet" style="width: 18px; height: 18px;"></i>
+                                </div>
+                                <div class="dropdown-info">
+                                    <span class="dropdown-title">Spas & Hammams</span>
+                                    <span class="dropdown-desc">Gestion des ressources et cabines thermales</span>
+                                </div>
+                            </a>
+                            <a href="/solutions#salons-beaute" class="dropdown-item">
+                                <div class="dropdown-icon">
+                                    <i data-lucide="scissors" style="width: 18px; height: 18px;"></i>
+                                </div>
+                                <div class="dropdown-info">
+                                    <span class="dropdown-title">Salons de Coiffure & Beauté</span>
+                                    <span class="dropdown-desc">Gestion des collaborateurs et encaissements</span>
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="/#pricing" class="nav-link" id="nav-pricing-link">Tarifs</a>
+                    </li>
+                    <li class="nav-item mobile-actions-item">
+                        <div class="nav-actions">
+                            <a href="login.html" class="login-link" id="nav-login-btn">Connexion</a>
+                            <a href="signup.html" class="btn btn-primary" id="nav-trial-btn">Essai Gratuit</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Mobile Hamburger Toggle -->
+            <button class="mobile-toggle" id="mobile-toggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- 2. Hero Section -->
+    <section class="subpage-hero">
+        <div class="container">
+            <h1 class="hero-title">Solutions</h1>
+            <p class="hero-subtitle">Une plateforme pensée pour les professionnels de l’esthétique, du bien-être et de la beauté au Maroc.</p>
+        </div>
+    </section>
+
+    <!-- 3. Solutions Section -->
+    <section class="subpage-sections">
+        <div class="container">
+            <div class="subpage-card-grid">
+                
+                <!-- Solution 1: Cliniques & Centres Laser -->
+                <div class="subpage-card" id="cliniques-laser">
+                    <div class="subpage-card-icon">
+                        <i data-lucide="activity" style="width: 28px; height: 28px;"></i>
+                    </div>
+                    <div>
+                        <h2 class="subpage-card-title">Cliniques & Centres Laser</h2>
+                        <p class="subpage-card-desc">Gérez les consultations, les suivis médicaux, les consentements, les cabines et les rendez-vous patients.</p>
+                    </div>
+                    <ul class="subpage-features-list">
+                        <li class="subpage-feature-item">
+                            <i data-lucide="check" style="width: 16px; height: 16px;"></i>
+                            <span>Suivi client/patient</span>
+                        </li>
+                        <li class="subpage-feature-item">
+                            <i data-lucide="check" style="width: 16px; height: 16px;"></i>
+                            <span>Gestion des cabines</span>
+                        </li>
+                        <li class="subpage-feature-item">
+                            <i data-lucide="check" style="width: 16px; height: 16px;"></i>
+                            <span>Rappels post-traitement</span>
+                        </li>
+                        <li class="subpage-feature-item">
+                            <i data-lucide="check" style="width: 16px; height: 16px;"></i>
+                            <span>Organisation des services laser</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Solution 2: Spas & Hammams -->
+                <div class="subpage-card" id="spas-hammams">
+                    <div class="subpage-card-icon">
+                        <i data-lucide="droplet" style="width: 28px; height: 28px;"></i>
+                    </div>
+                    <div>
+                        <h2 class="subpage-card-title">Spas & Hammams</h2>
+                        <p class="subpage-card-desc">Simplifiez la gestion des ressources, cabines thermales, réservations, packs et expériences clients.</p>
+                    </div>
+                    <ul class="subpage-features-list">
+                        <li class="subpage-feature-item">
+                            <i data-lucide="check" style="width: 16px; height: 16px;"></i>
+                            <span>Gestion des cabines</span>
+                        </li>
+                        <li class="subpage-feature-item">
+                            <i data-lucide="check" style="width: 16px; height: 16px;"></i>
+                            <span>Réservations par créneau</span>
+                        </li>
+                        <li class="subpage-feature-item">
+                            <i data-lucide="check" style="width: 16px; height: 16px;"></i>
+                            <span>Packs et offres</span>
+                        </li>
+                        <li class="subpage-feature-item">
+                            <i data-lucide="check" style="width: 16px; height: 16px;"></i>
+                            <span>Suivi fidélité client</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Solution 3: Salons de Coiffure & Beauté -->
+                <div class="subpage-card" id="salons-beaute">
+                    <div class="subpage-card-icon">
+                        <i data-lucide="scissors" style="width: 28px; height: 28px;"></i>
+                    </div>
+                    <div>
+                        <h2 class="subpage-card-title">Salons de Coiffure & Beauté</h2>
+                        <p class="subpage-card-desc">Organisez les collaborateurs, les encaissements, les rendez-vous, les services et les clients réguliers.</p>
+                    </div>
+                    <ul class="subpage-features-list">
+                        <li class="subpage-feature-item">
+                            <i data-lucide="check" style="width: 16px; height: 16px;"></i>
+                            <span>Planning équipe</span>
+                        </li>
+                        <li class="subpage-feature-item">
+                            <i data-lucide="check" style="width: 16px; height: 16px;"></i>
+                            <span>Services et tarifs</span>
+                        </li>
+                        <li class="subpage-feature-item">
+                            <i data-lucide="check" style="width: 16px; height: 16px;"></i>
+                            <span>Clients réguliers</span>
+                        </li>
+                        <li class="subpage-feature-item">
+                            <i data-lucide="check" style="width: 16px; height: 16px;"></i>
+                            <span>Relances automatiques</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Footer -->
+    <footer class="footer minimal-footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="/" class="logo">
+                        <div class="logo-icon"></div>
+                        <span>Volzyne</span>
+                    </a>
+                    <p class="footer-desc">Smart beauty business management for clinics, spas, hammams, and salons.</p>
+                </div>
+                <div class="footer-nav">
+                    <ul class="footer-links-inline">
+                        <li><a href="/fonctionnalites">Fonctionnalités</a></li>
+                        <li><a href="/solutions">Solutions</a></li>
+                        <li><a href="/#pricing">Pricing</a></li>
+                        <li><a href="login.html">Login</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom footer -->
+            <div class="footer-bottom">
+                <p class="copyright">&copy; 2026 Volzyne. All rights reserved.</p>
+                <div class="footer-bottom-text">
+                    <p>Made with ❤️ for the beauty ecosystem.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

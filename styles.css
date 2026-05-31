@@ -1319,3 +1319,114 @@ a {
         align-items: flex-start;
     }
 }
+
+/* Subpage Layout Helpers */
+.subpage-hero {
+    padding: 180px 0 80px 0;
+    text-align: center;
+}
+
+.subpage-sections {
+    padding-bottom: 120px;
+}
+
+.subpage-card-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+}
+
+@media (max-width: 992px) {
+    .subpage-card-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.subpage-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 3.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    transition: var(--transition-slow);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+.subpage-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+    background: rgba(20, 20, 25, 0.7);
+}
+
+.subpage-card::after {
+    content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: radial-gradient(circle at top right, rgba(130, 111, 240, 0.1), transparent 50%);
+    pointer-events: none; opacity: 0; transition: var(--transition);
+}
+.subpage-card:hover::after { opacity: 1; }
+
+.subpage-card-icon {
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--primary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.subpage-card:hover .subpage-card-icon {
+    background: white;
+    color: black;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+}
+
+.subpage-card-title {
+    font-size: 1.8rem;
+    color: white;
+    margin-bottom: 0.5rem;
+}
+
+.subpage-card-desc {
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+
+.subpage-features-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+    margin-top: 1rem;
+}
+
+@media (max-width: 576px) {
+    .subpage-features-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+.subpage-feature-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.subpage-feature-item svg {
+    color: white;
+    flex-shrink: 0;
+}
