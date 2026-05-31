@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volzyne CRM Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+<div class="app-container">
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+    <!-- 1. Sidebar -->
+    <aside class="sidebar" id="app-sidebar">
+        <div class="sidebar-header">
+            <a href="index.html" class="brand">
+                <div class="brand-icon"></div>
+                Volzyne
+            </a>
+        </div>
+
+        <nav class="sidebar-nav">
+            <a href="#" class="nav-item active" data-target="view-conversations">
+                <i data-lucide="message-square"></i> Conversations
+            </a>
+            <a href="#" class="nav-item" data-target="view-analytics">
+                <i data-lucide="bar-chart-2"></i> Analytics
+            </a>
+            <a href="#" class="nav-item" data-target="view-reservations">
+                <i data-lucide="calendar"></i> Reservations
+            </a>
+            <a href="#" class="nav-item" data-target="view-services">
+                <i data-lucide="scissors"></i> Services
+            </a>
+            <a href="#" class="nav-item" data-target="view-forms">
+                <i data-lucide="file-text"></i> Forms
+            </a>
+            <a href="#" class="nav-item" data-target="view-channels">
+                <i data-lucide="smartphone"></i> Channels
+            </a>
+            <a href="#" class="nav-item" data-target="view-agents">
+                <i data-lucide="users"></i> Agents
+            </a>
+            <a href="#" class="nav-item" data-target="view-clients">
+                <i data-lucide="user-check"></i> Clients
+            </a>
+            <a href="#" class="nav-item" data-target="view-knowledge">
+                <i data-lucide="book"></i> Knowledge Base
+            </a>
+            <a href="#" class="nav-item" data-target="view-labels">
+                <i data-lucide="tag"></i> Labels
+            </a>
+            <a href="#" class="nav-item" data-target="view-replies">
+                <i data-lucide="bookmark"></i> Saved Replies
+            </a>
+            <a href="#" class="nav-item" data-target="view-settings">
+                <i data-lucide="settings"></i> Settings
+            </a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <div class="credits-card">
+                <h4>Credits Usage</h4>
+                <div class="credit-row">
+                    <span>AI Credits</span>
+                    <span class="credit-value">1,245 / 3,000</span>
+                </div>
+                <div class="credit-row">
+                    <span>KB Limit</span>
+                    <span class="credit-value">120k / 500k</span>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- 2. Main Content Area -->
+    <main class="main-area">
+
+        <!-- Header -->
+        <header class="top-header">
+            <div class="header-left">
+                <button class="icon-btn mobile-menu-btn" id="mobile-menu-btn">
+                    <i data-lucide="menu"></i>
+                </button>
+                <button class="btn-compose">
+                    <i data-lucide="plus" style="width: 16px; height: 16px;"></i> <span class="compose-text">Compose</span>
+                </button>
+            </div>
+            
+            <div class="header-right">
+                <button class="icon-btn hide-on-mobile" aria-label="Language">
+                    <i data-lucide="globe"></i>
+                </button>
+                <button class="icon-btn hide-on-mobile" aria-label="Toggle Theme">
+                    <i data-lucide="moon"></i>
+                </button>
+                <button class="icon-btn hide-on-mobile" aria-label="Notifications">
+                    <i data-lucide="bell"></i>
+                </button>
+                <div class="user-profile">
+                    <div class="avatar">V</div>
+                    <span class="profile-name" style="font-size: 0.9rem; font-weight: 500;">Clinic Admin</span>
+                    <i data-lucide="chevron-down" style="width: 16px; height: 16px; color: var(--text-muted);"></i>
+                </div>
+            </div>
+        </header>
+
+        <!-- Dynamic Views Container -->
+        <div class="views-container">
+
+            <!-- 1. Conversations View -->
+            <section id="view-conversations" class="app-view conversations-view active" style="display: flex;">
+                <!-- Column 1: List -->
+                <div class="col col-list">
+                    <div class="col-header">
+                        <div class="inbox-title-row">
+                            <h2>Conversations</h2>
+                            <button class="icon-btn"><i data-lucide="filter" style="width: 18px; height: 18px;"></i></button>
+                        </div>
+                        <div class="tabs-row">
+                            <span class="tab active">Open</span>
+                            <span class="tab">Resolved</span>
+                            <span class="tab">All</span>
+                        </div>
+                        <div class="filter-row">
+                            <span class="filter-chip">Instagram</span>
+                            <span class="filter-chip">WhatsApp</span>
+                            <span class="filter-chip">VIP</span>
+                        </div>
+                    </div>
+                    <div class="col-content">
+                        <div class="empty-state">
+                            <i data-lucide="inbox"></i>
+                            <p>No conversations found</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Column 2: Chat -->
+                <div class="col col-chat">
+                    <div class="chat-mobile-header" id="chat-mobile-header">
+                        <button class="icon-btn" id="btn-back-to-list"><i data-lucide="arrow-left"></i></button>
+                        <div class="mobile-chat-title">Conversation</div>
+                    </div>
+                    <div class="col-content">
+                        <div class="empty-state">
+                            <i data-lucide="message-circle"></i>
+                            <p>Select a conversation to start chatting</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Column 3: Details -->
+                <div class="col col-details">
+                    <div class="col-content">
+                        <div class="empty-state">
+                            <i data-lucide="info"></i>
+                            <p>Select a conversation to view details</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2. Analytics View -->
+            <section id="view-analytics" class="app-view standard-view" style="display: none;">
+                <div class="view-header">
+                    <h2>Analytics Overview</h2>
+                </div>
+                <div class="view-content">
+                    <div class="metrics-grid">
+                        <div class="metric-card">
+                            <div class="metric-title">Monthly Revenue</div>
+                            <div class="metric-value">45,200 MAD</div>
+                            <div class="metric-trend positive">+12.5%</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-title">Booking Rate</div>
+                            <div class="metric-value">28.4%</div>
+                            <div class="metric-trend positive">+4.2%</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-title">Total Conversations</div>
+                            <div class="metric-value">1,842</div>
+                            <div class="metric-trend neutral">-1.2%</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-title">AI Automation Rate</div>
+                            <div class="metric-value">84%</div>
+                            <div class="metric-trend positive">+18%</div>
+                        </div>
+                    </div>
+                    <div class="charts-grid">
+                        <div class="chart-placeholder">
+                            <i data-lucide="bar-chart"></i>
+                            <span>Revenue Trend (Last 30 Days)</span>
+                        </div>
+                        <div class="chart-placeholder">
+                            <i data-lucide="pie-chart"></i>
+                            <span>Channel Distribution</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3. Reservations View -->
+            <section id="view-reservations" class="app-view standard-view" style="display: none;">
+                <div class="view-header flex-between">
+                    <h2>Reservations</h2>
+                    <button class="btn-compose">Add Appointment</button>
+                </div>
+                <div class="view-content">
+                    <div class="calendar-layout">
+                        <div class="list-card">
+                            <h3>Upcoming Today</h3>
+                            <div class="data-list">
+                                <div class="list-item">
+                                    <div class="item-info">
+                                        <strong>Sarah M.</strong>
+                                        <span>Laser Hair Removal - Full Body</span>
+                                    </div>
+                                    <div class="item-meta">
+                                        <span class="meta-time">10:00 AM</span>
+                                        <span class="badge badge-success">Confirmed</span>
+                                    </div>
+                                </div>
+                                <div class="list-item">
+                                    <div class="item-info">
+                                        <strong>Khadija B.</strong>
+                                        <span>Hydrafacial</span>
+                                    </div>
+                                    <div class="item-meta">
+                                        <span class="meta-time">11:30 AM</span>
+                                        <span class="badge badge-warning">Pending</span>
+                                    </div>
+                                </div>
+                                <div class="list-item">
+                                    <div class="item-info">
+                                        <strong>Amine T.</strong>
+                                        <span>Consultation</span>
+                                    </div>
+                                    <div class="item-meta">
+                                        <span class="meta-time">02:00 PM</span>
+                                        <span class="badge badge-danger">Canceled</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="calendar-placeholder">
+                            <i data-lucide="calendar"></i>
+                            <p>Full Calendar View</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 4. Services View -->
+            <section id="view-services" class="app-view standard-view" style="display: none;">
+                <div class="view-header flex-between">
+                    <h2>Services Catalog</h2>
+                    <button class="btn-compose">Add Service</button>
+                </div>
+                <div class="view-content">
+                    <div class="services-grid">
+                        <div class="service-card">
+                            <h3>Laser Hair Removal</h3>
+                            <p class="service-desc">Full body Diode laser session.</p>
+                            <div class="service-meta">
+                                <span><i data-lucide="clock"></i> 60 min</span>
+                                <span><i data-lucide="tag"></i> 800 MAD</span>
+                            </div>
+                            <button class="btn-ghost">Edit</button>
+                        </div>
+                        <div class="service-card">
+                            <h3>Hydrafacial Premium</h3>
+                            <p class="service-desc">Deep cleaning and hydration treatment.</p>
+                            <div class="service-meta">
+                                <span><i data-lucide="clock"></i> 45 min</span>
+                                <span><i data-lucide="tag"></i> 600 MAD</span>
+                            </div>
+                            <button class="btn-ghost">Edit</button>
+                        </div>
+                        <div class="service-card">
+                            <h3>Royal Hammam</h3>
+                            <p class="service-desc">Traditional Moroccan spa with scrub.</p>
+                            <div class="service-meta">
+                                <span><i data-lucide="clock"></i> 90 min</span>
+                                <span><i data-lucide="tag"></i> 350 MAD</span>
+                            </div>
+                            <button class="btn-ghost">Edit</button>
+                        </div>
+                        <div class="service-card">
+                            <h3>Keratin Hair Treatment</h3>
+                            <p class="service-desc">Protein straightening for medium hair.</p>
+                            <div class="service-meta">
+                                <span><i data-lucide="clock"></i> 120 min</span>
+                                <span><i data-lucide="tag"></i> 1200 MAD</span>
+                            </div>
+                            <button class="btn-ghost">Edit</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 5. Forms View -->
+            <section id="view-forms" class="app-view standard-view" style="display: none;">
+                <div class="view-header flex-between">
+                    <h2>Form Builder</h2>
+                    <button class="btn-compose">Create Form</button>
+                </div>
+                <div class="view-content">
+                    <div class="cards-grid">
+                        <div class="form-card">
+                            <div class="form-icon"><i data-lucide="calendar-check"></i></div>
+                            <h3>Direct Booking</h3>
+                            <p>Standard service scheduling form</p>
+                            <div class="form-actions">
+                                <button class="btn-ghost sm">Copy Link</button>
+                                <button class="btn-ghost sm">Edit</button>
+                            </div>
+                        </div>
+                        <div class="form-card">
+                            <div class="form-icon"><i data-lucide="users"></i></div>
+                            <h3>Lead Generation</h3>
+                            <p>Discount offer capture form</p>
+                            <div class="form-actions">
+                                <button class="btn-ghost sm">Copy Link</button>
+                                <button class="btn-ghost sm">Edit</button>
+                            </div>
+                        </div>
+                        <div class="form-card">
+                            <div class="form-icon"><i data-lucide="message-square"></i></div>
+                            <h3>Appointment Request</h3>
+                            <p>Manual review before confirmation</p>
+                            <div class="form-actions">
+                                <button class="btn-ghost sm">Copy Link</button>
+                                <button class="btn-ghost sm">Edit</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 6. Channels View -->
+            <section id="view-channels" class="app-view standard-view" style="display: none;">
+                <div class="view-header">
+                    <h2>Communication Channels</h2>
+                </div>
+                <div class="view-content">
+                    <div class="cards-grid">
+                        <div class="channel-card active-channel">
+                            <div class="channel-header">
+                                <i data-lucide="instagram" class="channel-icon"></i>
+                                <span class="badge badge-success">Connected</span>
+                            </div>
+                            <h3>Instagram Direct</h3>
+                            <p>@volzyne_clinic</p>
+                            <button class="btn-ghost mt-auto">Configure</button>
+                        </div>
+                        <div class="channel-card active-channel">
+                            <div class="channel-header">
+                                <i data-lucide="message-circle" class="channel-icon"></i>
+                                <span class="badge badge-success">Connected</span>
+                            </div>
+                            <h3>WhatsApp Business</h3>
+                            <p>+212 600 000 000</p>
+                            <button class="btn-ghost mt-auto">Configure</button>
+                        </div>
+                        <div class="channel-card">
+                            <div class="channel-header">
+                                <i data-lucide="facebook" class="channel-icon"></i>
+                                <span class="badge badge-neutral">Not Connected</span>
+                            </div>
+                            <h3>Facebook Messenger</h3>
+                            <p>Connect your page</p>
+                            <button class="btn-primary mt-auto">Connect</button>
+                        </div>
+                        <div class="channel-card">
+                            <div class="channel-header">
+                                <i data-lucide="video" class="channel-icon"></i>
+                                <span class="badge badge-neutral">Not Connected</span>
+                            </div>
+                            <h3>TikTok Leads</h3>
+                            <p>Connect your account</p>
+                            <button class="btn-primary mt-auto">Connect</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 7. Agents View -->
+            <section id="view-agents" class="app-view standard-view" style="display: none;">
+                <div class="view-header flex-between">
+                    <h2>Team & AI Agents</h2>
+                    <button class="btn-compose">Invite Member</button>
+                </div>
+                <div class="view-content split-layout">
+                    <div class="table-container flex-2">
+                        <h3>Human Agents</h3>
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Role</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td data-label="Name">Yasmine R.</td>
+                                    <td data-label="Role">Receptionist</td>
+                                    <td data-label="Status"><span class="status-dot online"></span> Online</td>
+                                </tr>
+                                <tr>
+                                    <td data-label="Name">Dr. Salma B.</td>
+                                    <td data-label="Role">Specialist</td>
+                                    <td data-label="Status"><span class="status-dot offline"></span> Offline</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="settings-card flex-1">
+                        <div class="card-header">
+                            <i data-lucide="bot"></i>
+                            <h3>Volzyne AI Agent</h3>
+                        </div>
+                        <div class="setting-group">
+                            <label>Language Models</label>
+                            <div class="toggle-row">
+                                <span>Moroccan Darija</span>
+                                <div class="toggle active"></div>
+                            </div>
+                            <div class="toggle-row">
+                                <span>French</span>
+                                <div class="toggle active"></div>
+                            </div>
+                        </div>
+                        <div class="setting-group">
+                            <label>Automation</label>
+                            <div class="toggle-row">
+                                <span>Auto-reply to FAQs</span>
+                                <div class="toggle active"></div>
+                            </div>
+                            <div class="toggle-row">
+                                <span>Auto-book appointments</span>
+                                <div class="toggle"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 8. Clients View -->
+            <section id="view-clients" class="app-view standard-view" style="display: none;">
+                <div class="view-header flex-between">
+                    <h2>Client Database</h2>
+                    <button class="btn-compose">Export CSV</button>
+                </div>
+                <div class="view-content">
+                    <div class="table-container full-width">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Client Name</th>
+                                    <th>Phone Number</th>
+                                    <th>Tags</th>
+                                    <th>Last Visit</th>
+                                    <th>Total Spent</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td data-label="Client Name">Nadia Benali</td>
+                                    <td data-label="Phone Number">+212 611 223 344</td>
+                                    <td data-label="Tags"><span class="tag tag-purple">VIP</span> <span class="tag tag-blue">Laser</span></td>
+                                    <td data-label="Last Visit">Oct 12, 2026</td>
+                                    <td data-label="Total Spent">4,500 MAD</td>
+                                </tr>
+                                <tr>
+                                    <td data-label="Client Name">Karim Idrissi</td>
+                                    <td data-label="Phone Number">+212 622 334 455</td>
+                                    <td data-label="Tags"><span class="tag tag-yellow">Relance</span></td>
+                                    <td data-label="Last Visit">Sep 05, 2026</td>
+                                    <td data-label="Total Spent">800 MAD</td>
+                                </tr>
+                                <tr>
+                                    <td data-label="Client Name">Sofia Tazi</td>
+                                    <td data-label="Phone Number">+212 633 445 566</td>
+                                    <td data-label="Tags"><span class="tag tag-blue">Facial</span></td>
+                                    <td data-label="Last Visit">Oct 15, 2026</td>
+                                    <td data-label="Total Spent">1,200 MAD</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 9. Knowledge Base View -->
+            <section id="view-knowledge" class="app-view standard-view" style="display: none;">
+                <div class="view-header flex-between">
+                    <h2>AI Knowledge Base</h2>
+                    <button class="btn-compose">Upload Document</button>
+                </div>
+                <div class="view-content">
+                    <div class="kb-status-card mb-4">
+                        <div class="kb-header">
+                            <h3>Training Status</h3>
+                            <span class="badge badge-success">AI Trained & Ready</span>
+                        </div>
+                        <div class="progress-bar-container">
+                            <div class="progress-info">
+                                <span>Word Usage</span>
+                                <span>120,450 / 500,000 words</span>
+                            </div>
+                            <div class="progress-track">
+                                <div class="progress-fill" style="width: 24%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="list-card">
+                        <h3>Uploaded Sources</h3>
+                        <div class="data-list">
+                            <div class="list-item">
+                                <div class="item-info">
+                                    <i data-lucide="file-text"></i>
+                                    <strong>Pricing_List_2026.pdf</strong>
+                                </div>
+                                <div class="item-meta">
+                                    <span class="meta-time">12.4 KB</span>
+                                    <button class="icon-btn sm"><i data-lucide="trash-2"></i></button>
+                                </div>
+                            </div>
+                            <div class="list-item">
+                                <div class="item-info">
+                                    <i data-lucide="globe"></i>
+                                    <strong>www.volzyne-clinic.ma/faq</strong>
+                                </div>
+                                <div class="item-meta">
+                                    <span class="meta-time">Scraped 2 days ago</span>
+                                    <button class="icon-btn sm"><i data-lucide="refresh-cw"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 10. Labels View -->
+            <section id="view-labels" class="app-view standard-view" style="display: none;">
+                <div class="view-header flex-between">
+                    <h2>Manage Labels</h2>
+                    <button class="btn-compose">New Label</button>
+                </div>
+                <div class="view-content">
+                    <div class="empty-state">
+                        <i data-lucide="tags"></i>
+                        <p>Configure custom labels for your conversations and clients.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 11. Saved Replies View -->
+            <section id="view-replies" class="app-view standard-view" style="display: none;">
+                <div class="view-header flex-between">
+                    <h2>Saved Replies</h2>
+                    <button class="btn-compose">New Template</button>
+                </div>
+                <div class="view-content">
+                    <div class="empty-state">
+                        <i data-lucide="bookmark"></i>
+                        <p>Create quick reply templates for your agents.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 12. Settings View -->
+            <section id="view-settings" class="app-view standard-view" style="display: none;">
+                <div class="view-header">
+                    <h2>Workspace Settings</h2>
+                </div>
+                <div class="view-content settings-layout">
+                    <div class="settings-sidebar">
+                        <div class="set-tab active">General Profile</div>
+                        <div class="set-tab">Billing & Plans</div>
+                        <div class="set-tab">Team Management</div>
+                        <div class="set-tab">Security</div>
+                    </div>
+                    <div class="settings-content">
+                        <div class="settings-card">
+                            <h3>Clinic Information</h3>
+                            <div class="form-group">
+                                <label>Clinic Name</label>
+                                <input type="text" class="form-input" value="Volzyne Aesthetics Casablanca">
+                            </div>
+                            <div class="form-group">
+                                <label>Phone Number</label>
+                                <input type="text" class="form-input" value="+212 600 000 000">
+                            </div>
+                            <button class="btn-compose mt-4">Save Changes</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+</div>
+
+<script src="dashboard.js"></script>
+</body>
+</html>

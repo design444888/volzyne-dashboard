@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volzyne | Le CRM & Logiciel de Gestion pour Cliniques Esthétiques et Salons au Maroc</title>
+    <meta name="description" content="Volzyne est le premier logiciel tout-en-un dédié aux cliniques esthétiques, centres de laser, spas, hammams et salons de coiffure au Maroc. Centralisez vos réservations, clients et factures.">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+    <!-- Background glowing circles -->
+    <div class="bg-glow-1"></div>
+    <div class="bg-glow-2"></div>
+
+    <!-- 1. Navbar -->
+    <header class="header-wrapper" id="main-header">
+        <div class="container navbar">
+            <!-- Left: Brand Logo -->
+            <a href="#" class="logo" id="nav-brand-logo">
+                <div class="logo-icon"></div>
+                <span>Volzyne</span>
+            </a>
+
+            <!-- Center Navigation Links -->
+            <nav>
+                <ul class="nav-menu" id="nav-menu">
+                    <!-- Features Dropdown -->
+                    <li class="nav-item">
+                        <a href="#features" class="nav-link nav-link-dropdown" id="nav-features-dropdown">
+                            Fonctionnalités
+                            <i data-lucide="chevron-down" style="width: 14px; height: 14px; margin-left: 4px;"></i>
+                        </a>
+                        <div class="dropdown-menu">
+                            <a href="#inbox" class="dropdown-item">
+                                <div class="dropdown-icon">
+                                    <i data-lucide="inbox" style="width: 18px; height: 18px;"></i>
+                                </div>
+                                <div class="dropdown-info">
+                                    <span class="dropdown-title">Unified Inbox</span>
+                                    <span class="dropdown-desc">Centralisez WhatsApp, Instagram et SMS</span>
+                                </div>
+                            </a>
+                            <a href="#calendar" class="dropdown-item">
+                                <div class="dropdown-icon">
+                                    <i data-lucide="calendar" style="width: 18px; height: 18px;"></i>
+                                </div>
+                                <div class="dropdown-info">
+                                    <span class="dropdown-title">Smart Calendar</span>
+                                    <span class="dropdown-desc">Rendez-vous fluides et rappels auto</span>
+                                </div>
+                            </a>
+                            <a href="#ai-agent" class="dropdown-item">
+                                <div class="dropdown-icon">
+                                    <i data-lucide="bot" style="width: 18px; height: 18px;"></i>
+                                </div>
+                                <div class="dropdown-info">
+                                    <span class="dropdown-title">AI Agent</span>
+                                    <span class="dropdown-desc">Secrétaire virtuelle disponible 24/7</span>
+                                </div>
+                            </a>
+                            <a href="#analytics" class="dropdown-item">
+                                <div class="dropdown-icon">
+                                    <i data-lucide="bar-chart-2" style="width: 18px; height: 18px;"></i>
+                                </div>
+                                <div class="dropdown-info">
+                                    <span class="dropdown-title">Analytics</span>
+                                    <span class="dropdown-desc">Statistiques de ventes et performances</span>
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+
+                    <!-- Solutions Dropdown -->
+                    <li class="nav-item">
+                        <a href="#solutions" class="nav-link nav-link-dropdown" id="nav-solutions-dropdown">
+                            Solutions
+                            <i data-lucide="chevron-down" style="width: 14px; height: 14px; margin-left: 4px;"></i>
+                        </a>
+                        <div class="dropdown-menu">
+                            <a href="#clinics" class="dropdown-item">
+                                <div class="dropdown-icon">
+                                    <i data-lucide="activity" style="width: 18px; height: 18px;"></i>
+                                </div>
+                                <div class="dropdown-info">
+                                    <span class="dropdown-title">Cliniques & Centres Laser</span>
+                                    <span class="dropdown-desc">Suivi médical, consentement et cabines</span>
+                                </div>
+                            </a>
+                            <a href="#spas" class="dropdown-item">
+                                <div class="dropdown-icon">
+                                    <i data-lucide="droplet" style="width: 18px; height: 18px;"></i>
+                                </div>
+                                <div class="dropdown-info">
+                                    <span class="dropdown-title">Spas & Hammams</span>
+                                    <span class="dropdown-desc">Gestion des ressources et cabines thermales</span>
+                                </div>
+                            </a>
+                            <a href="#salons" class="dropdown-item">
+                                <div class="dropdown-icon">
+                                    <i data-lucide="scissors" style="width: 18px; height: 18px;"></i>
+                                </div>
+                                <div class="dropdown-info">
+                                    <span class="dropdown-title">Salons de Coiffure & Beauté</span>
+                                    <span class="dropdown-desc">Gestion des collaborateurs et encaissements</span>
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#pricing" class="nav-link" id="nav-pricing-link">Tarifs</a>
+                    </li>
+                    <li class="nav-item mobile-actions-item">
+                        <div class="nav-actions">
+                            <a href="login.html" class="login-link" id="nav-login-btn">Connexion</a>
+                            <a href="signup.html" class="btn btn-primary" id="nav-trial-btn">Essai Gratuit</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Mobile Hamburger Toggle -->
+            <button class="mobile-toggle" id="mobile-toggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- 2. Hero Section -->
+    <section class="hero-section">
+        <div class="container hero-grid-container">
+            <div class="hero-content-left">
+                <span class="badge fade-in-up">Le CRM N°1 de l'Esthétique au Maroc</span>
+                <h1 class="hero-title fade-in-up delay-100" id="hero-main-title">Take full control of your aesthetic center’s bookings, team, and clients.</h1>
+                <p class="hero-subtitle fade-in-up delay-200">Volzyne helps aesthetic clinics, spas, hammams, and beauty salons manage conversations, bookings, AI agents, and analytics from one smart dashboard.</p>
+                <div class="hero-ctas fade-in-up delay-300">
+                    <a href="signup.html" class="btn btn-primary">Start Free Trial</a>
+                    <a href="#pricing" class="btn btn-secondary">View Pricing</a>
+                </div>
+            </div>
+
+            <!-- CSS-based Premium Dashboard Mockup on the right side -->
+            <div class="hero-preview-right fade-in-up delay-300">
+                <div class="dashboard-frame">
+                    <div class="db-header">
+                        <div class="db-dots">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <div class="db-search">Search client, booking, invoice...</div>
+                        <div style="width: 24px;"></div>
+                    </div>
+                    <div class="db-body">
+                        <div class="db-sidebar">
+                            <div class="sidebar-item active">
+                                <div class="sidebar-icon"></div>
+                                <div class="sidebar-text"></div>
+                            </div>
+                            <div class="sidebar-item">
+                                <div class="sidebar-icon"></div>
+                                <div class="sidebar-text"></div>
+                            </div>
+                            <div class="sidebar-item">
+                                <div class="sidebar-icon"></div>
+                                <div class="sidebar-text"></div>
+                            </div>
+                            <div class="sidebar-item">
+                                <div class="sidebar-icon"></div>
+                                <div class="sidebar-text"></div>
+                            </div>
+                        </div>
+                        <div class="db-content">
+                            <div class="db-stats">
+                                <div class="stat-card">
+                                    <div class="stat-title"></div>
+                                    <div class="stat-val"></div>
+                                </div>
+                                <div class="stat-card">
+                                    <div class="stat-title"></div>
+                                    <div class="stat-val"></div>
+                                </div>
+                                <div class="stat-card" style="display: none;"> <!-- Hidden on small mockup sizes -->
+                                    <div class="stat-title"></div>
+                                    <div class="stat-val"></div>
+                                </div>
+                            </div>
+                            <div class="db-view">
+                                <div class="db-view-header">
+                                    <div class="db-view-title">Today's Schedule</div>
+                                </div>
+                                <div class="db-view-body">
+                                    <div class="appointment-row">
+                                        <div class="appt-client">
+                                            <div class="appt-avatar"></div>
+                                            <div class="appt-name"></div>
+                                        </div>
+                                        <div class="appt-treatment"></div>
+                                        <div class="appt-time">09:30</div>
+                                    </div>
+                                    <div class="appointment-row">
+                                        <div class="appt-client">
+                                            <div class="appt-avatar" style="background-color: var(--accent);"></div>
+                                            <div class="appt-name"></div>
+                                        </div>
+                                        <div class="appt-treatment"></div>
+                                        <div class="appt-time">11:00</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Features Section (4-Card Grid) -->
+    <section class="features-section" id="features">
+        <div class="container">
+            <div class="section-header fade-in-up">
+                <h2 class="section-title">Tout ce dont vous avez besoin pour piloter votre activité</h2>
+                <p class="section-desc">Des outils modernes et puissants conçus spécifiquement pour le marché de l'esthétique et de la beauté au Maroc.</p>
+            </div>
+
+            <!-- Features 4-Card Grid -->
+            <div class="features-grid">
+                <!-- Feature 1 -->
+                <div class="feature-card fade-in-up delay-100">
+                    <div class="feature-card-icon">
+                        <i data-lucide="inbox" style="width: 24px; height: 24px;"></i>
+                    </div>
+                    <div class="feature-card-content">
+                        <span class="feature-subtitle">Conversations</span>
+                        <h3 class="feature-title">One Inbox for All Your Channels</h3>
+                        <p class="feature-desc">Connect Instagram, Facebook, and WhatsApp through Canaux and manage every client conversation from one dashboard.</p>
+                    </div>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="feature-card fade-in-up delay-200">
+                    <div class="feature-card-icon">
+                        <i data-lucide="bot" style="width: 24px; height: 24px;"></i>
+                    </div>
+                    <div class="feature-card-content">
+                        <span class="feature-subtitle">Agents Humains & IA</span>
+                        <h3 class="feature-title">Your 24/7 Automated Sales Closer</h3>
+                        <p class="feature-desc">Let your AI Agent qualify leads and book appointments automatically in Moroccan Darija or French, with human handover when needed.</p>
+                    </div>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="feature-card fade-in-up delay-100">
+                    <div class="feature-card-icon">
+                        <i data-lucide="calendar" style="width: 24px; height: 24px;"></i>
+                    </div>
+                    <div class="feature-card-content">
+                        <span class="feature-subtitle">Réservations & Services</span>
+                        <h3 class="feature-title">Automated Calendars That Fill Themselves</h3>
+                        <p class="feature-desc">Organize services, forms, and bookings into one smart calendar without manual phone coordination.</p>
+                    </div>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="feature-card fade-in-up delay-200">
+                    <div class="feature-card-icon">
+                        <i data-lucide="bar-chart-2" style="width: 24px; height: 24px;"></i>
+                    </div>
+                    <div class="feature-card-content">
+                        <span class="feature-subtitle">Analytique & Étiquettes</span>
+                        <h3 class="feature-title">Complete Control Over Your Sales Pipeline</h3>
+                        <p class="feature-desc">Use tags like VIP, Relance, and Laser, and track revenue, booking rates, and team performance.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Solutions / Why Choose Us Section -->
+    <section class="solutions-section" id="solutions">
+        <div class="container">
+            <div class="section-header fade-in-up">
+                <h2 class="section-title">Pourquoi choisir Volzyne ?</h2>
+                <p class="section-desc">Comparez et découvrez pourquoi Volzyne est la plateforme préférée des professionnels de la beauté au Maroc.</p>
+            </div>
+
+            <div class="comparison-grid">
+                <!-- Other CRM -->
+                <div class="comparison-card other-platforms fade-in-up delay-100">
+                    <h3 class="card-label other">
+                        <i data-lucide="x-circle" style="width: 20px; height: 20px;"></i>
+                        Other CRMs & Management Platforms
+                    </h3>
+                    <ul class="comparison-list">
+                        <li>
+                            <i data-lucide="x" style="width: 18px; height: 18px;"></i>
+                            <div class="item-desc">Rigid generic software built for tech companies or retail</div>
+                        </li>
+                        <li>
+                            <i data-lucide="x" style="width: 18px; height: 18px;"></i>
+                            <div class="item-desc">Standard chatbots that do not understand Moroccan clients</div>
+                        </li>
+                        <li>
+                            <i data-lucide="x" style="width: 18px; height: 18px;"></i>
+                            <div class="item-desc">Fragmented tools requiring separate chat tools, forms, and calendars</div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Volzyne CRM -->
+                <div class="comparison-card volzyne-platform fade-in-up delay-200">
+                    <h3 class="card-label volzyne">
+                        <div class="logo-icon" style="width: 24px; height: 24px; border-radius: 6px;"></div>
+                        Volzyne: Dedicated to Aesthetic & Beauty
+                    </h3>
+                    <ul class="comparison-list">
+                        <li>
+                            <i data-lucide="check" style="width: 18px; height: 18px;"></i>
+                            <div class="item-desc">Built specifically for premium aesthetic centers, spas, and salons</div>
+                        </li>
+                        <li>
+                            <i data-lucide="check" style="width: 18px; height: 18px;"></i>
+                            <div class="item-desc">Gemini AI optimized for Darija and French conversations</div>
+                        </li>
+                        <li>
+                            <i data-lucide="check" style="width: 18px; height: 18px;"></i>
+                            <div class="item-desc">Unified ecosystem: conversations, CRM, inventory, forms, and calendars</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Pricing Section -->
+    <section class="pricing-section" id="pricing">
+        <div class="container">
+            <div class="section-header fade-in-up">
+                <h2 class="section-title">Des tarifs simples et transparents</h2>
+                <p class="section-desc">Choisissez l'abonnement le plus adapté à la taille de votre établissement. Sans engagement.</p>
+            </div>
+
+            <!-- Pricing Toggle (Monthly / Annual) -->
+            <div class="pricing-toggle-container fade-in-up delay-100">
+                <span class="toggle-label active" id="billing-monthly">Mensuel</span>
+                <button class="pricing-toggle" id="pricing-toggle" aria-label="Toggle billing duration">
+                    <span></span>
+                </button>
+                <span class="toggle-label" id="billing-yearly">Annuel (2 mois gratuits)</span>
+            </div>
+
+            <div class="pricing-grid">
+                <!-- Plan 1: Solo -->
+                <div class="pricing-card fade-in-up delay-100">
+                    <span class="plan-name">Solo</span>
+                    <p class="plan-desc">Master your basic communication and keep your schedule organized.</p>
+                    <div class="plan-price"><span class="currency">$</span><span id="starter-price">20</span><span class="period"> / month</span></div>
+                    <p class="plan-best-for">Best for: Independent practitioners or brand-new salons</p>
+                    <a href="#trial" class="btn btn-secondary">Start Free Trial</a>
+                    <ul class="plan-features">
+                        <li>
+                            <i data-lucide="check" style="width: 16px; height: 16px;"></i>
+                            2 Channels: Instagram + Facebook DMs
+                        </li>
+                        <li>
+                            <i data-lucide="check" style="width: 16px; height: 16px;"></i>
+                            2 Seats
+                        </li>
+                        <li>
+                            <i data-lucide="check" style="width: 16px; height: 16px;"></i>
+                            Unlimited Calendar & Services management
+                        </li>
+                        <li>
+                            <i data-lucide="check" style="width: 16px; height: 16px;"></i>
+                            1,000 AI Credits
+                        </li>
+                        <li>
+                            <i data-lucide="check" style="width: 16px; height: 16px;"></i>
+                            Standard Support
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Plan 2: Studio -->
+                <div class="pricing-card popular fade-in-up delay-200">
+                    <span class="popular-badge">Recommended</span>
+                    <span class="plan-name">Studio</span>
+                    <p class="plan-desc">Bring your primary channels together and let AI handle the heavy lifting.</p>
+                    <div class="plan-price"><span class="currency">$</span><span id="pro-price">29</span><span class="period"> / month</span></div>
+                    <p class="plan-best-for">Best for: Growing beauty teams</p>
+                    <a href="#trial" class="btn btn-primary">Start Free Trial</a>
+                    <ul class="plan-features">
+                        <li>
+                            <i data-lucide="check" style="width: 16px; height: 16px;"></i>
+                            3 Channels including WhatsApp Business
+                        </li>
+                        <li>
+                            <i data-lucide="check" style="width: 16px; height: 16px;"></i>
+                            4 Seats
+                        </li>
+                        <li>
+                            <i data-lucide="check" style="width: 16px; height: 16px;"></i>
+                            Unified Darija & French AI Agent
+                        </li>
+                        <li>
+                            <i data-lucide="check" style="width: 16px; height: 16px;"></i>
+                            3,000 AI Credits
+                        </li>
+                        <li>
+                            <i data-lucide="check" style="width: 16px; height: 16px;"></i>
+                            500k words Knowledge Base
+                        </li>
+                        <li>
+                            <i data-lucide="check" style="width: 16px; height: 16px;"></i>
+                            Priority Support
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Plan 3: Clinic -->
+                <div class="pricing-card fade-in-up delay-300">
+                    <span class="plan-name">Clinic</span>
+                    <p class="plan-desc">Total operational control, unlimited scalability, and maximum performance.</p>
+                    <div class="plan-price"><span class="currency">$</span><span id="growth-price">49</span><span class="period"> / month</span></div>
+                    <p class="plan-best-for">Best for: High-volume centers</p>
+                    <a href="#trial" class="btn btn-secondary">Start Free Trial</a>
+                    <ul class="plan-features">
+                        <li>
+                            <i data-lucide="check" style="width: 16px; height: 16px;"></i>
+                            Instagram, Facebook, WhatsApp, TikTok, Web Live Chat
+                        </li>
+                        <li>
+                            <i data-lucide="check" style="width: 16px; height: 16px;"></i>
+                            10 Seats
+                        </li>
+                        <li>
+                            <i data-lucide="check" style="width: 16px; height: 16px;"></i>
+                            Advanced AI Agent
+                        </li>
+                        <li>
+                            <i data-lucide="check" style="width: 16px; height: 16px;"></i>
+                            8,000 AI Credits
+                        </li>
+                        <li>
+                            <i data-lucide="check" style="width: 16px; height: 16px;"></i>
+                            2M words Knowledge Base
+                        </li>
+                        <li>
+                            <i data-lucide="check" style="width: 16px; height: 16px;"></i>
+                            VIP WhatsApp Support
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Footer -->
+    <footer class="footer minimal-footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="#" class="logo">
+                        <div class="logo-icon"></div>
+                        <span>Volzyne</span>
+                    </a>
+                    <p class="footer-desc">Smart beauty business management for clinics, spas, hammams, and salons.</p>
+                </div>
+                <div class="footer-nav">
+                    <ul class="footer-links-inline">
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#solutions">Solutions</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                        <li><a href="#login">Login</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom footer -->
+            <div class="footer-bottom">
+                <p class="copyright">&copy; 2026 Volzyne. All rights reserved.</p>
+                <div class="footer-bottom-text">
+                    <p>Made with ❤️ for the beauty ecosystem.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
